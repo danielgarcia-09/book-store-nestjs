@@ -38,7 +38,7 @@ export class UserService {
             where: {status: 'ACTIVE'},
         });
 
-        return this._mapperService.mapCollection<User, UserDto>(users, new UserDto());
+        return this._mapperService.mapCollection<User, UserDto>(users, new UserDto()); 
     }
 
     async createUser(user: User): Promise<UserDto> {
