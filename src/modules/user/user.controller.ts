@@ -1,5 +1,4 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post } from '@nestjs/common';
-import { UserDto } from './user.dto';
 import { User } from './user.entity';
 import { UserService } from './user.service';
 
@@ -8,17 +7,17 @@ export class UserController {
     constructor(private readonly _userService: UserService) {}
 
     @Get(':id')
-    async getUser(@Param('id', ParseIntPipe) id: number): Promise<UserDto> {
+    async getUser(@Param('id', ParseIntPipe) id: number): Promise<User> {
         return await this._userService.get(id);
     }
 
     @Get()
-    async getUsers(): Promise<UserDto[]> {
+    async getUsers(): Promise<User[]> {
         return await this._userService.getAll();
     }
 
     @Post('create')
-    async createUser(@Body() user: User): Promise<UserDto> {
+    async createUser(@Body() user: User): Promise<User> {
         return await this._userService.createUser(user);
     }
     

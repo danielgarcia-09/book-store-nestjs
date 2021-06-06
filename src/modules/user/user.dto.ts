@@ -1,4 +1,4 @@
-import { isNotEmpty, IsNotEmpty } from "class-validator";
+import { IsNotEmpty } from "class-validator";
 import { RoleType } from '../role/roletype.enum';
 import { UserDetails } from "./user.details.entity";
 
