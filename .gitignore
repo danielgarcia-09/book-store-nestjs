@@ -1,7 +1,6 @@
 # compiled output
 /dist
 /node_modules
-/orm.config.json
 # Logs
 logs
 *.log
