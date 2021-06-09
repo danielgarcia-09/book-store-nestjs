@@ -9,6 +9,7 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule } from '../../config/config.module';
 import { Configuration } from '../../config/config.keys';
+import { BookModule } from './modules/book/book.module';
 
 
 @Module({
@@ -28,7 +29,8 @@ import { Configuration } from '../../config/config.keys';
           }
         }
       }
-    })
+    }),
+    BookModule
   ],
   controllers: [AuthController],
   providers: [AuthService, ConfigService,JwtStrategy],

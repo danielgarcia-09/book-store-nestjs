@@ -2,9 +2,8 @@ import { BadRequestException, Injectable, NotFoundException } from '@nestjs/comm
 import { InjectRepository } from '@nestjs/typeorm';
 import { RoleRepository } from './role.repository';
 import { Role } from './role.entity';
-import { ReadRoleDto } from './dtos/read-role.dto';
 import { plainToClass } from 'class-transformer';
-import { CreateRoleDto, UpdateRoleDto } from './dtos';
+import { ReadRoleDto, UpdateRoleDto ,CreateRoleDto } from './dtos';
 import { Status } from '../../shared/entity.status.enum';
 
 

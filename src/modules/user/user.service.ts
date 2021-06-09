@@ -4,9 +4,9 @@ import { UserRepository } from './user.repository';
 import { User } from './user.entity';
 import { RoleRepository } from '../role/role.repository';
 import { Status} from '../../shared/entity.status.enum';
-import { ReadUserDto } from './dto/read-user.dto';
 import { plainToClass } from 'class-transformer';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { ReadUserDto, UpdateUserDto } from './dto';
+
 
 @Injectable()
 export class UserService {

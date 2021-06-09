@@ -3,8 +3,8 @@ import { AuthGuard } from '@nestjs/passport';
 import { UserService } from './user.service';
 import { RoleGuard } from '../role/guards/role.guard';
 import { RoleType } from '../role/roletype.enum';
-import { ReadUserDto } from './dto/read-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { ReadUserDto, UpdateUserDto } from './dto';
+
 
 @Controller('users')
 export class UserController {

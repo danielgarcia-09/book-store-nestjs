@@ -1,4 +1,6 @@
+import { Status } from '../../shared/entity.status.enum';
 import { BaseEntity, Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Book } from '../book/book.entity';
 import { Role } from '../role/role.entity';
 import { UserDetails } from './user.details.entity';
 
@@ -29,7 +31,11 @@ export class User extends BaseEntity {
     @JoinTable({ name: 'user_roles' })
     roles: Role[];
 
-    @Column({type: 'varchar',default: 'ACTIVE',length: 8 })
+    @ManyToMany(type => Book, book => book.authors)
+    @JoinTable({ name: 'user_books' })
+    books: Book[];
+
+    @Column({type: 'varchar',default: Status.ACTIVE, length: 8 })
     status: string;
 
     @CreateDateColumn({ type: 'timestamp', name: 'created_at' })
